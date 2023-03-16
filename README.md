@@ -3,6 +3,7 @@
 ## 0x00-hello_world
 
 ### General
+
     * Why C programming is awesome
     * Who invented C
     * Who are Dennis Ritchie, Brian Kernighan and Linus Torvalds
@@ -20,6 +21,7 @@
 ## Requirements
 
 ### C
+
     * Allowed editors: ``vi``, ``vim``, ``emacs``
     * All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options ``-Wall -Werror -Wextra -pedantic -std=gnu89``
     * All your files should end with a new line
@@ -30,6 +32,7 @@
     * Your code should use the Betty style. It will be checked using ``betty-style.pl`` and ``betty-doc.pl``
 
 ### Shell Scripts
+
     * Allowed editors: ``vi``, ``vim``, ``emacs``
     * All your scripts will be tested on Ubuntu 20.04 LTS
     * All your scripts should be exactly two lines long (``$ wc -l`` file should print 2)
