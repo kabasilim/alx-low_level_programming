@@ -20,7 +20,7 @@ int main(void)
 		printf("is greater than 5");
 	}
 	if (x == 0)
-	{i
+	{
 		printf("is 0");
 	}
 	if (x < 6 && x != 0)
