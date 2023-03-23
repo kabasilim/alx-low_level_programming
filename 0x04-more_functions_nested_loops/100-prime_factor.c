@@ -1,36 +1,24 @@
 #include <stdio.h>
+
 /**
- * main - finds the square root
- *
- * @x: input number
- *
- * Return: square root of x
-*/
+ * main - prints largest prime factor.
+ * Return: Always 0.
+ */
+
 int main(void)
 {
-	long int i, max, n;
+	long int n, fp;
 
-	max = -1;
-	n = 612852475143 ;
-	while (n % 2 == 0)
+	n = 612852475143;
+	for (fp = 2; fp <= n; fp++)
 	{
-		max = 2;
-		n = n / 2;
-	}
-	for (i = 3; i <= sqrt(n); i = i + 2)
-	{
-		while (n % i == 0)
+		if (n % fp == 0)
 		{
-			max = i;
-			n = n / i;
+			n /= fp;
+			fp--;
 		}
-	}
-	if (n > 2)
-	{
-		max = n;
-	}
-	printf("%ld\n", max);
 
+	}
+	printf("%ld\n", fp);
 	return (0);
-
 }
