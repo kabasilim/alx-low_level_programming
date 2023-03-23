@@ -4,20 +4,19 @@
  *
  * @x: input number
  *
- * Return: 0
+ * Return: square root of x
 */
-int main(void)
+double _sqrt(double x)
 {
-	long int x = 612852475143;
-	long int y;
+	float sqrt, tmp;
 
-	for (y = 2; y < x; y++)
+	sqrt = x / 2;
+	tmp = 0;
+
+	while (sqrt != tmp)
 	{
-		if (x % y == 0)
-		{
-			x = x / y;
-		}
+		tmp = sqrt;
+		sqrt = (x / tmp + tmp) / 2;
 	}
-	printf("%ld\n", y);
-	return (0);
+	return (sqrt);
 }
