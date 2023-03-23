@@ -8,16 +8,29 @@
 */
 int main(void)
 {
-	long int x = 612852475143;
-	long int y;
+	long int i, max, n;
 
-	for (y = 2; y < x; y++)
+	max = -1;
+	n = 612852475143 ;
+	while (n % 2 == 0)
 	{
-		if (x % y == 0)
+		max = 2;
+		n = n / 2;
+	}
+	for (i = 3; i <= sqrt(n); i = i + 2)
+	{
+		while (n % i == 0)
 		{
-			x = x / y;
+			max = i;
+			n = n / i;
 		}
 	}
-	printf("%ld\n", y);
+	if (n > 2)
+	{
+		max = n;
+	}
+	printf("%ld\n", max);
+
 	return (0);
+
 }
