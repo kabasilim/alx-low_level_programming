@@ -1,22 +1,23 @@
 #include <stdio.h>
 /**
- * _sqrt - finds the square root
+ * main - finds the square root
  *
  * @x: input number
  *
  * Return: square root of x
 */
-double _sqrt(double x)
+int main(void)
 {
-	float sqrt, tmp;
+	long int x = 612852475143;
+	long int y;
 
-	sqrt = x / 2;
-	tmp = 0;
-
-	while (sqrt != tmp)
+	for (y = 2; y < x; y++)
 	{
-		tmp = sqrt;
-		sqrt = (x / tmp + tmp) / 2;
+		if (x % y == 0)
+		{
+			x = x / y;
+		}
 	}
-	return (sqrt);
+	printf("%ld\n", y);
+	return (0);
 }
