@@ -11,23 +11,22 @@
 int main(void)
 {
 	char a[100];
-	int x, y, z;
+	int r, n, i;
 
-	y = 0;
-	z = 0;
+	n = 0;
+	i = 0;
 	srand(time(NULL));
-	while (y < 2645)
+	while (n < 2645)
 	{
-		x = rand() % 122;
-		if (x > 32)
+		r = rand() % 122;
+		if (r > 32)
 		{
-			a[z++] = y;
-			y += x;
+			a[i++] = r;
+			n += r;
 		}
 	}
-	a[z++] = (2772 - y);
-	a[z] = '\0';
+	a[i++] = (2772 - n);
+	a[i] = '\0';
 	printf("%s", a);
 	return (0);
 }
-
