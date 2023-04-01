@@ -1,11 +1,10 @@
 #include "main.h"
 
 /**
- * _strcmp - a function that compares two strings
- *
- * @s1: string 1 input to compare
- * @s2: against this other string 2
- * Return: difference between two strings
+ * _strcmp - Function that compares two strings.
+ * @s1: String input to compare.
+ * @s2: Against other string.
+ * Return: Difference between two strings.
  */
 
 int _strcmp(char *s1, char *s2)
