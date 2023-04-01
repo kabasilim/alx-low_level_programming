@@ -1,15 +1,15 @@
 #include "main.h"
 
 /**
- * rev_string - Reverse array.
- * @n: integer parameter.
+ * rev_string - reverse array
+ * @n: integer params
  * Return: 0
  */
 
 void rev_string(char *n)
 {
 	int i = 0;
-	int a = 0;
+	int j = 0;
 	char temp;
 
 	while (*(n + i) != '\0')
@@ -18,62 +18,61 @@ void rev_string(char *n)
 	}
 	i--;
 
-	for (a = 0; a < i; a++, i--)
+	for (j = 0; j < i; j++, i--)
 	{
-		temp = *(n + a);
-		*(n + a) = *(n + i);
+		temp = *(n + j);
+		*(n + j) = *(n + i);
 		*(n + i) = temp;
 	}
 }
 
 /**
- * infinite_add - Add two numbers together.
- * @n1: Text representation of 1st number to add
- * and
- * @n2: Text representation of 2nd number to add.
- * @r: Pointer to buffer.
- * @size_r: Buffer size.
- * Return: Pointer to calling function.
+ * infinite_add - add 2 numbers together
+ * @n1: text representation of 1st number to add
+ * @n2: text representation of 2nd number to add
+ * @r: pointer to buffer
+ * @size_r: buffer size
+ * Return: pointer to calling function
  */
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int inu = 0, i = 0, a = 0, numbers = 0;
-	int wor1 = 0, wor2 = 0, temp_tot = 0;
+	int overflow = 0, i = 0, j = 0, digits = 0;
+	int val1 = 0, val2 = 0, temp_tot = 0;
 
 	while (*(n1 + i) != '\0')
 		i++;
-	while (*(n2 + a) != '\0')
-		a++;
+	while (*(n2 + j) != '\0')
+		j++;
 	i--;
-	a--;
-	if (a >= size_r || i >= size_r)
+	j--;
+	if (j >= size_r || i >= size_r)
 		return (0);
-	while (a >= 0 || i >= 0 || inu == 1)
+	while (j >= 0 || i >= 0 || overflow == 1)
 	{
 		if (i < 0)
-			wor1 = 0;
+			val1 = 0;
 		else
-			wor1 = *(n1 + i) - '0';
-		if (a < 0)
-			wor2 = 0;
+			val1 = *(n1 + i) - '0';
+		if (j < 0)
+			val2 = 0;
 		else
-			wor2 = *(n2 + j) - '0';
-		temp_tot = wor1 + wor2 + inu;
+			val2 = *(n2 + j) - '0';
+		temp_tot = val1 + val2 + overflow;
 		if (temp_tot >= 10)
-			inu = 1;
+			overflow = 1;
 		else
-			inu = 0;
-		if (numbers >= (size_r - 1))
+			overflow = 0;
+		if (digits >= (size_r - 1))
 			return (0);
-		*(r + numbers) = (temp_tot % 10) + '0';
-		numbers++;
-		a--;
+		*(r + digits) = (temp_tot % 10) + '0';
+		digits++;
+		j--;
 		i--;
 	}
-	if (numbers == size_r)
+	if (digits == size_r)
 		return (0);
-	*(r + numbers) = '\0';
+	*(r + digits) = '\0';
 	rev_string(r);
 	return (r);
 }
