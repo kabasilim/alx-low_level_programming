@@ -5,7 +5,7 @@
  *
  * @haystack: input string to search for matching
  *            substrings
- * @needle: subtring 
+ * @needle: subtring
  *
  * Return: A pointer to the beginning
  *         of the located substring or
