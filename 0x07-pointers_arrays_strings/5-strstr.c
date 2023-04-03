@@ -14,25 +14,20 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	/**
-	 * we initialize a helping variable
-	 * to assist in returning one of
-	 * our parameters pointers haystack
-	*/
-	char *h, *n;
+	char *hay, *need;
 
-	while (*haystack != '\0')
+	while (*haystack != 0)
 	{
-		h = haystack;
-		n = needle;
-		while (*n != '\0' && *haystack == *n)
+		hay = haystack;
+		need = needle;
+		while (*need != 0 && *haystack == *need)
 		{
 			haystack++;
-			n++;
+			need++;
 		}
-		if (!*n)
-			return (h);
+		if (!*need)
+			return (hay);
 		haystack++;
 	}
-	return ('\0');
+	return (0);
 }
