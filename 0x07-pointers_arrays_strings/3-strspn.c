@@ -5,30 +5,28 @@
  * @s: Pointer to string input
  * @accept: Substring prefix to look for
  * Return: int
-*/
+ */
 
 unsigned int _strspn(char *s, char *accept)
 {
-	int i, a, b;
+	unsigned int c = 0;
+	char *t = accept;
 
-	i = 0;
-	while (s[i] != '\0')
+	while (*s++)
 	{
-		a = 0;
-		b = 1;
-		while (accept[a] != '\0')
+		while (*accept++)
 		{
-			if (s[i] == accept[a])
+			if (*(s - 1) == *(accept - 1))
 			{
-				b = 0;
+				c++;
 				break;
 			}
-			a++;
 		}
-		if (a == 1)
+		if (!(*--accept))
+		{
 			break;
-		i++;
+		}
+		accept = t;
 	}
-
-	return (i);
+	return (c);
 }
