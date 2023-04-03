@@ -2,8 +2,8 @@
 /**
  * _isdigit - checks if an input is a digit
  * @n: input to be checked
- * Return: 1 if input is a digit || 0 otherwise
-*/
+ * Return: 1 or 0
+ */
 int _isdigit(int n)
 {
 int i;
