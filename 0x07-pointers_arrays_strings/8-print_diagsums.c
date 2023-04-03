@@ -7,33 +7,35 @@
  * @size: dimension of the array (size x size)
  * Return: void
  */
+
 void print_diagsums(int *a, int size)
 {
-	unsigned int size1, size2;
-	int i, j;
+	unsigned int sum1, sum2;
+	int row, col;
 
-	i = 0;
-	j = 0;
-	size1 = 0;
+	row = 0;
+	col = 0;
+	sum1 = 0;
 
-	while (i < size)
+	while (row < size)
 	{
-		size1 += *(a + (i * size + j));
-		i++;
-		j++;
+		sum1 += *(a + (row * size + col));
+		row++;
+		col++;
 	}
 
-	i = 0;
-	j = size - 1;
-	size2 = 0;
+	row = 0;
+	/* start from last col then move backwards */
+	col = size - 1;
+	sum2 = 0;
 
-	while (i < size)
+	while (row < size)
 	{
-		size2 += *(a + (i * size + j));
-		i++;
-		j--;
+		sum2 += *(a + (row * size + col));
+		row++;
+		col--;
 	}
 
-	printf("%d, %d\n", size1, size2);
+	printf("%d, %d\n", sum1, sum2);
 
 }
