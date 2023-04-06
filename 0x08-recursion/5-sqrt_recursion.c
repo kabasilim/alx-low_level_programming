@@ -11,20 +11,20 @@ int _sqrt_recursion(int n)
 
 /**
  * square - finds the square root of a number
- * @num: number
- * @root: value
+ * @n: number
+ * @y: value
  * Return: int
 */
 
-int square(int num, int root)
+int square(int n, int y)
 {
-	if ((root * root) == num)
+	if ((y * y) == n)
 	{
-		return (root);
+		return (y);
 	}
-	else if ((root * root) < num)
+	else if ((y * y) < n)
 	{
-		return (square(num, root + 1));
+		return (square(n, y + 1));
 	}
 	else
 	{
