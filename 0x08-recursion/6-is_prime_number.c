@@ -3,22 +3,19 @@
  * is_prime_number - checks if integer is a prime number
  * @n: number to be checked
  * Return: 1 if prime number and 0 otherwise
- */
-
+*/
 int is_prime_number(int n)
 {
-	return (main(n, 2));
+	return (is_prime(n, 2));
 
 }
-
 /**
- * main - checks if a number is a prime number
+ * is_prime - checks if a number is a prime number
  * @n: number to be checked
  * @y: number
  * Return: 1 if prime number and 0 otherwise
- */
-
-int main(int n, int y)
+*/
+int is_prime(int n, int y)
 {
 	if (y >= n && n > 1)
 	{
@@ -30,6 +27,6 @@ int main(int n, int y)
 	}
 	else
 	{
-		return (main(n, y + 1));
+		return (is_prime(n, y + 1));
 	}
 }
