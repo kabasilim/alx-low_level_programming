@@ -31,7 +31,6 @@ int sqrt_recursive(int n, int min, int max)
 
 int _sqrt_recursion(int n)
 {
-	int root = 0;
 
 	if (n < 0)
 		return (-1);
@@ -39,5 +38,5 @@ int _sqrt_recursion(int n)
 	if (n == 1)
 		return (1)
 
-		return (sqrt_recursive(n, root));
+		return (sqrt_recursive(n, 1, n));
 }
