@@ -8,17 +8,17 @@
 
 int _sqrt_recursion(int n)
 {
-	return (square(n, 1));
+	return (sqrt_recursive(n, 1));
 }
 
 /**
- * square - finds the square root of a number
+ * sqrt_recursive - finds the square root of a number
  * @n: number
  * @v: value
  * Return: int
  */
 
-int square(int n, int v)
+int sqrt_recursive(int n, int v)
 {
 	if ((v * v) == n)
 	{
@@ -26,7 +26,7 @@ int square(int n, int v)
 	}
 	else if ((v * v) < n)
 	{
-		return (square(n, v + 1));
+		return (sqrt_recursive(n, v + 1));
 	}
 	else
 	{
