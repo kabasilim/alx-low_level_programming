@@ -31,4 +31,5 @@ int square(int n, int v)
 	else
 	{
 		return (-1);
-
+	}
+}
