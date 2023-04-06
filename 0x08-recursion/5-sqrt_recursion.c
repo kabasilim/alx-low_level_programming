@@ -1,12 +1,12 @@
 /**
- * _sqrt_recursive - Wrapper that does the recursion bit
+ * sqrt_recursive - Wrapper that does the recursion bit
  * @n : input number
  * @x: minimum number to guess
  * @y: maximum number to guess
  * Return: square root of @n or -1
  */
 
-int _sqrt_recursive(int n, int x, int y)
+int sqrt_recursive(int n, int x, int y)
 {
 	if (x > y)
 	{
@@ -22,11 +22,11 @@ int _sqrt_recursive(int n, int x, int y)
 	}
 	else if (sq > n)
 	{
-		return (_sqrt_recursive(n, x, z - 1));
+		return (sqrt_recursive(n, x, z - 1));
 	}
 	else
 	{
-		return (_sqrt_recursive(n, z + 1, y));
+		return (sqrt_recursive(n, z + 1, y));
 	}
 }
 
@@ -38,6 +38,6 @@ int _sqrt_recursive(int n, int x, int y)
 
 int _sqrt_recursion(int n)
 {
-	return (sqrt_recursive(n, 0, n));
+	return (_sqrt_recursion(n, 0, n));
 }
 
