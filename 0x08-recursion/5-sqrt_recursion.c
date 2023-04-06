@@ -3,28 +3,30 @@
  * _sqrt_recursion - returns the natural square root of a number
  * @n: number
  * Return: integer
-*/
+ */
+
 int _sqrt_recursion(int n)
 {
 	return (square(n, 1));
 }
 
 /**
- * square - finds the square root of a number
- * @n: number
- * @v: value
- * Return: int
-*/
+ * find_sqrt - finds the square root of a number
+ * @num: The number to find the square root of.
+ * @root: The root to be tested.
+ * Return: If the number has a natural square root - the square root.
+ *         If the number does not have a natural square root  -1.
+ */
 
-int square(int n, int v)
+int find_sqrt(int num, int root)
 {
-	if ((v * v) == n)
+	if ((root * root) == num)
 	{
-		return (v);
+		return (root);
 	}
-	else if ((v * v) < n)
+	else if ((root * root) < num)
 	{
-		return (square(n, v + 1));
+		return (square(num, root + 1));
 	}
 	else
 	{
