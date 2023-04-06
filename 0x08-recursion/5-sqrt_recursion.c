@@ -31,12 +31,13 @@ int sqrt_recursive(int n, int min, int max)
 
 int _sqrt_recursion(int n)
 {
-	if (n == 1)
-		return (1);
-	else if (n == 0)
-		return (0);
-	else if (n < 0)
+	int root = 0;
+
+	if (n < 0)
 		return (-1);
-	else
-		return (sqrt_recursive(n, 1, n));
+
+	if (n == 1)
+		return (1)
+
+		return (sqrt_recursive(n, root));
 }
