@@ -8,26 +8,19 @@
 
 int sqrt_recursive(int n, int min, int max)
 {
-	if (min > max)
-	{
-		return (-1); /* n does not have a natural square root */
-	}
+	int guess, guess_squared;
 
-	int med = (min + max) / 2;
-	int sq = med * med;
+	guess = (min + max) / 2;
+	guess_squared = guess * guess;
 
-	if (sq == n)
-	{
-		return (med);
-	}
-	else if (sq > n)
-	{
-		return (sqrt_recursive(n, min, med - 1));
-	}
+	if (guess_squared == n)
+		return (guess);
+	else if (min == max)
+		return (-1);
+	else if (guess_squared < n)
+		return (sqrt_recursive(n, guess + 1, max));
 	else
-	{
-		return (sqrt_recursive(n, med + 1, max));
-	}
+		return (sqrt_recursive(n, min, guess - 1));
 }
 
 /**
@@ -38,6 +31,12 @@ int sqrt_recursive(int n, int min, int max)
 
 int _sqrt_recursion(int n)
 {
-	return (_sqrt_recursive(n, 0, n));
+	if (n == 1)
+		return (1);
+	else if (n == 0)
+		return (0);
+	else if (n < 0)
+		return (-1);
+	else
+		return (_sqrt_recursive(n, 1, n));
 }
-
