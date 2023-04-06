@@ -1,32 +1,32 @@
 /**
  * sqrt_recursive - Wrapper that does the recursion bit
  * @n : input number
- * @small: minimum number to guess
- * @large: maximum number to guess
+ * @min: minimum number to guess
+ * @max: maximum number to guess
  * Return: square root of @n or -1
  */
 
-int sqrt_recursive(int n, int small, int large)
+int sqrt_recursive(int n, int min, int max)
 {
-	if (small > large)
+	if (min > max)
 	{
 		return (-1); /* n does not have a natural square root */
 	}
 
-	int medium = (small + large) / 2;
-	int sq = medium * medium;
+	int med = (min + max) / 2;
+	int sq = med * med;
 
 	if (sq == n)
 	{
-		return (medium);
+		return (med);
 	}
 	else if (sq > n)
 	{
-		return (sqrt_recursive(n, small, medium - 1));
+		return (sqrt_recursive(n, min, med - 1));
 	}
 	else
 	{
-		return (sqrt_recursive(n, medium + 1, large));
+		return (sqrt_recursive(n, med + 1, max));
 	}
 }
 
