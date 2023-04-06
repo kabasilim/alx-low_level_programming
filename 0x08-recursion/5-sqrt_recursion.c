@@ -18,7 +18,7 @@ int _sqrt_recursion(int n)
 
 int square(int num, int root)
 {
-	if ((root * root) == numb)
+	if ((root * root) == num)
 	{
 		return (root);
 	}
