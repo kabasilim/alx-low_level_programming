@@ -4,7 +4,7 @@
  * main - Entry point to a program that prints
  * its name, followed by a new line.
  * @argc: Number of things entered int the command line
- * @argv: Array that hols the string value of argc
+ * @argv: Array that holds the string value of argc
  * Return: 0
  */
 
