@@ -12,7 +12,7 @@ int main(int argc, char __attribute__((unused)) *argv[])
 {
 	int i = 0, f;
 
-	if (i < argc)
+	while (i < argc)
 	{
 		f = i;
 		i++;
