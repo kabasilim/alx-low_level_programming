@@ -8,10 +8,5 @@
 
 void _puts(char *str)
 {
-	int i;
 
-	/* loop through each character in the string */
-	for (i = 0; str[i] != '\0'; i++)
-		_putchar(str[i]);
-	_putchar('\n');
 }
