@@ -1,45 +1,67 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stddef.h>
+#include <stdio.h>
 
 /**
- * alloc_grid - returns a pointer to a 2 dimensional array of integers
- * @width: width of array
- * @height: height of array
- * Return: pointer to 2 dimensional array
+ * _strlen - find length of a string
+ * @s: string
+ * Return: int
  */
 
-int **alloc_grid(int width, int height)
+int _strlen(char *s)
 {
-	int **tab, i, j;
+	int i = 0;
 
-	tab = malloc(sizeof(*tab) * height);
-
-	if (width <= 0 || height <= 0 || tab == 0)
+	while (s[i] != '\0')
 	{
-		return (NULL);
+		i++;
 	}
-	else
-	{
-		for (i = 0; i < height; i++)
-		{
-			tab[i] = malloc(sizeof(**tab) * width);
-			if (tab[i] == 0)
-			{
-				/*Free everything if malloc fails*/
-				while (i--)
-				{
-					free(tab[i]);
-				}
-				free(tab);
-				return (NULL);
-			}
+	return (i);
+}
 
-			for (j = 0; j < width; j++)
-			{
-				tab[i][j] = 0;
-			}
+/**
+ * str_concat - function that concatenates two strings
+ * @s1: first string
+ * @s2: second string
+ * Return: pointer to concatenated string
+ */
+
+char *str_concat(char *s1, char *s2)
+{
+	int size1, size2, i;
+	char *s;
+
+	if (s1 == NULL)
+	{
+		s1 = "\0";
+	}
+	if (s2 == NULL)
+	{
+		s2 = "\0";
+	}
+
+	size1 = _strlen(s1);
+	size2 = _strlen(s2);
+
+	s = malloc((size1 + size2) * sizeof(char) + 1);
+
+	if (s == 0)
+	{
+		return (0);
+	}
+
+	for (i = 0; i <= size1 + size2; i++)
+	{
+		if (i < size1)
+		{
+			s[i] = s1[i];
+		}
+		else
+		{
+			s[i] = s2[i - size1];
 		}
 	}
-	return (tab);
+	s[i] = '\0';
+	return (s);
+
 }
