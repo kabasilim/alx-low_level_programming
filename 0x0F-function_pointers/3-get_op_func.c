@@ -1,25 +1,29 @@
-#ifndef CALC_H
-#define CALC_H
-#include <stddef.h>
+#include "3-calc.h"
 
 /**
- * struct op - operator structs
- * @op: The operator
- * @f: associated function
+ * get_op_func - selects the correct calculator operator
+ * @s: a pointer to an operator (+|-|*|/|%)
+ * Return: a pointer to an operator
  */
 
-typedef struct op
+int (*get_op_func(char *s))(int, int)
 {
-	char *op;
-	int (*f)(int a, int b);
-} op_t;
+	op_t ops[] = {
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
+		{NULL, NULL}
+	};
+	int i;
 
-int op_add(int a, int b);
-int op_sub(int a, int b);
-int op_mul(int a, int b);
-int op_div(int a, int b);
-int op_mod(int a, int b);
-
-int (*get_op_func(char *s))(int, int);
-
-#endif
+	i = 0;
+	while (i < 5)
+	{
+		if (*(ops + i)->op == *s)
+			return ((ops + i)->f);
+		i++;
+	}
+	return (NULL);
+}
