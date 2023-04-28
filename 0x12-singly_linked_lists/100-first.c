@@ -4,7 +4,7 @@
  * printMessage - function that runs before main
  */
 
-void printMessage(void)
+void __attribute__ ((constructor)) printMessage()
 {
 	printf("You're beat! and yet, you must allow,");
 	printf("\nI bore my house upon my back!\n");
