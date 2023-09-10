@@ -1,5 +1,5 @@
 # alx-low_level_programming
 
-## 0x1A hash table
+## 0x1A-hash_table
 
 ### General
